@@ -34,6 +34,8 @@ class MailCollectorBot(CollectorBot):
                                   sent_to=getattr(self.parameters, "sent_to", None),
                                   sent_from=getattr(self.parameters, "sent_from", None))
 
+        if isinstance(emails, tuple):
+            emails = [emails]
         if emails:
             for uid, message in emails:
 
